@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.bg-lighter {
+  background-color: #f3f5f7;
+}
+
+.bg-light {
+  background-color: #b4c4cf;
+}
+
+.button {
+  font-weight: 500;
+}
+
+.button-darker {
+  background-color: #0c3a45;
+}
+
+.button-round {
+  border-radius: 4rem;
+}
+
+.lighter {
+  color: #f3f5f7;
+}
+
+.light {
+  color: #b4c4cf;
+}
+
+#page-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#page-wrapper {
+  min-height: 100%;
+  position: relative;
+}

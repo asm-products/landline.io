@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/basscss.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#page-wrapper
+      nav.clearfix.bg-light
+        div.container.mt4
+          div.sm-col
+            a.button.py2.button-nav-light.white(href="/") Landline
+          div.sm-col-right
+            if currentUser
+              a.button.py2.button-nav-light.white(href="/logout") Logout
+            if !currentUser
+              a.button.py2.button-nav-light.white(href="/login") Sign in
+      block content
+      footer#page-footer.white.bg-light
+        nav.clearfix
+          div.container
+            div.sm-col
+              small
+                a.button.py2.button-nav-light.white(href="/") Twitter
+              small
+                a.button.py2.button-nav-light.white(href="/") Facebook
+              small
+                a.button.py2.button-nav-light.white(href="/") Blog
+            div.sm-col-right
+              small
+                a.button.py2.button-nav-light.white(href="/") Need help?
+              small
+                a.button.py2.button-nav-light.white(href="/") Privacy
+              small
+                a.button.py2.button-nav-light.white(href="/") Terms
