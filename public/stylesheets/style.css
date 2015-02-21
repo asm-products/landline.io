@@ -1,54 +1,38 @@
-@import url(http://fonts.googleapis.com/css?family=Nunito:400,300,700);
-
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: Nunito, sans-serif;
-  font-weight: 300;
-}
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Nunito, sans-serif;
-  font-weight: 400;
-}
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400; }
 
 .bg-lighter {
-  background-color: #f3f5f7;
-}
+  background-color: #F3F5F7; }
 
 .bg-light {
-  background-color: #b4c4cf;
-}
+  background-color: #B4C4CF; }
 
 .button {
-  font-weight: 500;
-}
+  font-weight: 500; }
 
 .button-darker {
-  background-color: #0c3a45;
-}
+  background-color: #0C3A45; }
 
 .button-round {
-  border-radius: 4rem;
-}
+  border-radius: 4rem; }
 
 .lighter {
-  color: #f3f5f7;
-}
+  color: #F3F5F7; }
 
 .light {
-  color: #b4c4cf;
-}
+  color: #B4C4CF; }
 
 #page-footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+  width: 100%; }
 
 #page-wrapper {
   min-height: 100%;
-  position: relative;
-}
+  position: relative; }
