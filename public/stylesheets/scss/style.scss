@@ -1,0 +1,51 @@
+@import 'variables';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+.bg-lighter {
+  background-color: $bg-lighter;
+}
+
+.bg-light {
+  background-color: $bg-light;
+}
+
+.button {
+  font-weight: 500;
+}
+
+.button-darker {
+  background-color: $btn-darker;
+}
+
+.button-round {
+  border-radius: 4rem;
+}
+
+.lighter {
+  color: $font-lighter;
+}
+
+.light {
+  color: $font-light;
+}
+
+#page-footer {
+  width: 100%;
+}
+
+#page-wrapper {
+  min-height: 100%;
+  position: relative;
+}
