@@ -32,7 +32,9 @@ p {
   border-radius: 10em;
   box-shadow: 0 1px 0 #9E1F60; }
   .button:hover {
-    opacity: 1; }
+    opacity: 1;
+    background-color: #d7115a;
+    box-shadow: none; }
 
 .site-nav {
   padding: 40px;
