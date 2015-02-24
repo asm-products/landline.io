@@ -114,3 +114,14 @@ p {
 
 #site-wrapper {
 }
+
+
+// Media Queries
+@media (max-width: 468px) {
+  .live-chat {
+    margin-bottom: 20px;
+  }
+  .feature {
+    padding: 15px 40px;
+  }
+}

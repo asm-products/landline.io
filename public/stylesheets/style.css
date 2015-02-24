@@ -86,3 +86,8 @@ p {
   font-weight: 500px;
   background-color: #345262; }
 
+@media (max-width: 468px) {
+  .live-chat {
+    margin-bottom: 20px; }
+  .feature {
+    padding: 15px 40px; } }
