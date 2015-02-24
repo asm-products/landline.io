@@ -11,10 +11,11 @@ html
           div.sm-col
             a.button.py2.button-nav-light.white(href="/") Landline
           div.sm-col-right
-            if currentUser
-              a.button.py2.button-nav-light.white(href="/logout") Logout
-            if !currentUser
-              a.button.py2.button-nav-light.white(href="/login") Sign in
+            if token
+              a.button.py2.button-nav-light.white(href="/logout") Log out
+            if !token
+              a.button.py2.button-nav-light.white(href="/login") Log in
+              a.button.py2.button-nav-light.white(href="/signup") Sign up
       block content
       footer#page-footer.white.bg-light
         nav.clearfix
@@ -31,3 +32,5 @@ html
                 a.button.py2.button-nav-light.white(href="/") Privacy
               small
                 a.button.py2.button-nav-light.white(href="/") Terms
+    script(src='/zepto.min.js')
+    script(src='/app.js')

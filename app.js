@@ -1,12 +1,13 @@
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var dotenv = require('dotenv').load();
 var express = require('express');
-var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var sassMiddleware = require('node-sass-middleware');
-
+var path = require('path');
 var routes = require('./routes/index');
+var sassMiddleware = require('node-sass-middleware');
+var session = require('express-session');
 
 var app = express();
 
@@ -27,8 +28,14 @@ app.use(
     debug: true
   })
 );
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.SESSION_SECRET
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/landline/dist')));
+app.use(express.static(path.join(__dirname, 'node_modules/zepto')));
 app.use(express.static(path.join(__dirname, 'node_modules/basscss/css')));
 
 app.use('/', routes);
@@ -63,6 +70,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
