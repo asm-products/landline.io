@@ -1,31 +1,33 @@
 extends layout
 
 block content
-  header.center.bg-light.white.bg-cover.bg-center.px3.py4
-    h1 Embeddable Chat
-    h5 Connect your users &mdash; with you and with each other &dash; with a simple &lt;script&gt; tag
-    button.button.mt2.bg-darker.button-round.white
-      span.px2 Try it now!
-  div.bg-lighter
-    div.container.px4.py3
-      div.center.py2(style='position:relative;top:-100px;')
-        iframe(src='/chat', width=800, height=400)
-      div.clearfix.mxn2
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Single dashboard
-          div.center 
-            small Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Uptime & support
-          div.center 
-            small Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Sync across devices
-          div.center 
-            small Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+  header.site-header.center
+    div.clearfix
+      h1.site-title Embeddable Chat
+      h3 Connect your users &mdash; with you and with each other &dash; with a simple &lt;script&gt; tag
+      a.button Try it right away!
+
+  div.container.center
+    div.clearfix
+
+      iframe.live-chat(src='/chat', width=800, height=400)
+
+      div.feature.sm-col.sm-col-4
+        h3.center Single dashboard
+        div.center
+          p Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac.
+      div.feature.sm-col.sm-col-4
+        h3.center Uptime & support
+        div.center
+          p Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac.
+      div.feature.sm-col.sm-col-4
+        h3.center Sync across devices
+        div.center
+          p Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac.
     div.bg-white
-      div.container.px4.py3.center
-        h5 Get started with Landline &mdash; plans start at $5 month for 100 users.
+      div.container.center
+        h4 Get started with Landline &mdash; plans start at $5 month for 100 users.
         button.button.mt2.bg-darker.button-round.white
           span.px3 Sign up now &mdash; your first month is free
-    
+

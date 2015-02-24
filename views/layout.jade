@@ -5,29 +5,39 @@ html
     link(rel='stylesheet', href='/basscss.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div#page-wrapper
-      nav.clearfix.bg-light
-        div.container.mt4
+    div#site-wrapper
+
+      nav.site-nav.clearfix
+        div.container
           div.sm-col
-            a.button.py2.button-nav-light.white(href="/") Landline
+            a(href="/") Landline
           div.sm-col-right
             if currentUser
-              a.button.py2.button-nav-light.white(href="/logout") Logout
+              a(href="/logout") Logout
             if !currentUser
-              a.button.py2.button-nav-light.white(href="/login") Sign in
+              a(href="/login") Sign in
+
       block content
-      footer#page-footer.white.bg-light
-        nav.clearfix
+
+      footer.site-footer
+        div.clearfix
           div.container
             div.sm-col
-              small
-                a.button.py2.button-nav-light.white(href="https://twitter.com/landlineio") Twitter
-              small
-                a.button.py2.button-nav-light.white(href="https://facebook.com/landline.io") Facebook
-            div.sm-col-right.hide
-              small
-                a.button.py2.button-nav-light.white(href="/") Need help?
-              small
-                a.button.py2.button-nav-light.white(href="/") Privacy
-              small
-                a.button.py2.button-nav-light.white(href="/") Terms
+              h3 Follow Landline
+              ul.list-reset
+                li
+                  a(href="https://twitter.com/landlineio") Twitter
+                li
+                  a(href="https://facebook.com/landline.io") Facebook
+            div.sm-col-right
+              ul.list-reset
+                li
+                  a(href="/") Need help?
+                li
+                  a(href="/") Privacy
+                li
+                  a(href="/") Terms
+      div.copyrights.clearfix
+        div.container
+          a Shipped in 7 days on Assembly
+          span.right &copy; 2015 Landline
