@@ -1,0 +1,9 @@
+div#app.center
+  input#email.field-light.mt0.mb0(type='text', placeholder='Email address')
+  button.button.bg-darker.white Submit
+script(src='landline.js')
+script(src='/javascripts/app.js')
+script
+  | window.renderLandline = function(username) {
+  |   Landline(username, document.getElementById('app'));
+  | }

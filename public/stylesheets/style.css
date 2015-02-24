@@ -9,6 +9,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
   font-weight: 400; }
 
+.bg-darker {
+  background-color: #0C3A45; }
+
 .bg-lighter {
   background-color: #F3F5F7; }
 
@@ -17,9 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .button {
   font-weight: 500; }
-
-.button-darker {
-  background-color: #0C3A45; }
 
 .button-round {
   border-radius: 4rem; }
@@ -31,7 +31,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #B4C4CF; }
 
 #page-footer {
-  width: 100%; }
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 #page-wrapper {
   min-height: 100%;

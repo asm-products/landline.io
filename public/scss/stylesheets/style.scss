@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+.bg-darker {
+  background-color: $btn-darker;
+}
+
 .bg-lighter {
   background-color: $bg-lighter;
 }
@@ -23,10 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .button {
   font-weight: 500;
-}
-
-.button-darker {
-  background-color: $btn-darker;
 }
 
 .button-round {
@@ -43,6 +43,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #page-footer {
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #page-wrapper {
