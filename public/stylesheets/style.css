@@ -75,6 +75,10 @@ p {
     .site-footer li:last-child {
       margin-right: 0; }
 
+.footer-title {
+  color: #FFF;
+  text-shadow: 0 1px 0 #345262; }
+
 .copyrights {
   padding: 10px 0;
   color: #FFF;
