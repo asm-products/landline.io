@@ -24,7 +24,7 @@ p {
   font-size: 14px; }
 
 .button {
-  padding: .8em 2em;
+  padding: 1em 2em .8em;
   font-weight: 500;
   text-shadow: none;
   letter-spacing: .03em;
@@ -65,6 +65,11 @@ p {
   padding: 40px;
   color: #477288; }
 
+.call-to-action {
+  border-top: 1px solid #edf3f6;
+  padding: 80px 40px;
+  color: #477288; }
+
 .site-footer {
   padding: 40px 40px 20px;
   background-color: #477288;
@@ -87,7 +92,12 @@ p {
   background-color: #345262; }
 
 @media (max-width: 468px) {
+  .site-nav, .site-header, .site-footer, .copyrights {
+    padding-right: 20px;
+    padding-left: 20px; }
   .live-chat {
     margin-bottom: 20px; }
   .feature {
-    padding: 15px 40px; } }
+    padding: 15px 20px; }
+  .call-to-action {
+    padding: 40px 20px 50px; } }

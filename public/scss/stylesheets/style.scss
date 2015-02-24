@@ -35,7 +35,7 @@ p {
 
 // Buttons
 .button {
-  padding: .8em 2em;
+  padding: 1em 2em .8em;
   font-weight: 500;
   text-shadow: none;
   letter-spacing: .03em;
@@ -87,6 +87,13 @@ p {
   color: $bg-light;
 }
 
+// Call to Action
+.call-to-action {
+  border-top: 1px solid lighten($bg-light, 54%);
+  padding: 80px 40px;
+  color: $bg-light;
+}
+
 // Site Footer
 .site-footer {
   padding: 40px 40px 20px;
@@ -118,10 +125,20 @@ p {
 
 // Media Queries
 @media (max-width: 468px) {
+  .site-nav,
+  .site-header,
+  .site-footer,
+  .copyrights {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .live-chat {
     margin-bottom: 20px;
   }
   .feature {
-    padding: 15px 40px;
+    padding: 15px 20px;
+  }
+  .call-to-action {
+    padding: 40px 20px 50px;
   }
 }
