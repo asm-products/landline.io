@@ -1,31 +1,28 @@
 extends layout
 
 block content
-  header.center.bg-light.white.bg-cover.bg-center.px3.py4
-    h1 Let your users do the talking
-    h5 Meet Landline, an embeddable chat solution that lets your users connect in real time &mdash; anywhere, on any device.
-    button.button.mt2.bg-darker.button-round.white
-      span.px2 Try it now!
-  div.bg-lighter
-    div.container.px4.py3
-      div.center.py2(style='position:relative;top:-100px;')
-        iframe(src='/chat', width=800, height=400)
-      div.clearfix.mxn2
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Embed anywhere
-          div.center 
-            small Use Landline's highly flexible embeddable chat that puts you in control. Customize, collaborate, and have fun.
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Single dashboard
-          div.center 
-            small Set up and manage everything from a single dashboard &mdash; hassle free.
-        div.sm-col.sm-col-4.px2
-          h3.mt0.center Bring your own users
-          div.center 
-            small Landline is unopinionated about user structure &mdash; it just needs names and faces.
-    div.bg-white
-      div.container.px4.py3.center
-        h5 Get started with Landline &mdash; simple bulk pricing from $5/month.
-        button.button.mt2.bg-darker.button-round.white
-          span.px3 Sign up now &mdash; your first month is free
-    
+  header.site-header.center
+    div.clearfix
+      h1.site-title Embeddable Chat
+      h3 Connect your users &mdash; with you and with each other &dash; with a simple &lt;script&gt; tag
+      a.button Try it right away!
+
+  div.container.center
+    div.clearfix
+      if token
+        iframe.live-chat(src='/chat', width=800, height=400)
+      else
+        img.screenshot-chat(src='/images/screenshot.png', width=800)
+
+      div.feature.sm-col.sm-col-4
+        h2.center Single dashboard
+        p.center Set up and manage everything from a single dashboard &mdash; hassle free.
+      div.feature.sm-col.sm-col-4
+        h2.center Bring your own users
+        p.center Landline is unopinionated about user structure &mdash; it just needs names and faces.
+      div.feature.sm-col.sm-col-4
+        h2.center Embed anywhere
+        p.center Use Landline's highly flexible embeddable chat that puts you in control. Customize, collaborate, and have fun.
+    div.call-to-action.center
+      h2 Get started with Landline &mdash; plans start at $5 month for 100 users.
+      a.button(href='/signup') Sign up now &mdash; your first month is free
