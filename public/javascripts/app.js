@@ -13,10 +13,10 @@
     var iframe = document.createElement('iframe');
     var chat = document.getElementById('chat');
 
-    iframe.src = '/chat?team=Landline';
+    iframe.src = '/chat?team=landline';
     iframe.className = 'live-chat';
     iframe.width = 800;
-    iframe.height = 400;
+    iframe.height = 600;
 
     chat.innerHTML = '';
     chat.appendChild(iframe);
@@ -28,19 +28,10 @@
       email: $form.find('input[name="email"]').val()
     };
 
-    return console.log(data);
-
     $form.find('input[name="email"]').val('');
 
-    $.post(path, data)
-      .done(function(data) {
-        $form.find('input[name="email"]').val('');
-        $('.alert-success').fadeTo(100, 1);
-        $('.alert-success').fadeTo(10*1000, 0);
-      })
-      .fail(function(err) {
-        $('.alert-danger').fadeTo(100, 1);
-        $('.alert-danger').fadeTo(10*1000, 0);
-      });
+    $.post(path, data, function(data) {
+      console.log('it worked?');
+    });
   }
 })(Zepto);

@@ -6,6 +6,7 @@ var querystring = require('querystring');
 var uuid = require('node-uuid');
 
 var API = process.env.LANDLINE_API + '/sessions/sso';
+var LOGIN_URL = process.env.LANDLINE_API + '/teams/landline';
 var SALT = process.env.SALT;
 var SECRET = process.env.LANDLINE_SECRET;
 var SIGNUP_URL = process.env.LANDLINE_API + '/teams';
@@ -15,7 +16,8 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
   res.render('index', {
-    title: 'Landline'
+    title: 'Landline',
+    token: req.session && req.session.token
   });
 });
 
@@ -35,6 +37,39 @@ router.get('/sso', allowCors, function(req, res) {
     '&sig=' + mac;
 
   res.redirect(url);
+});
+
+router.get('/login', function(req, res) {
+  res.render('login', { title: 'Landline | Login' });
+});
+
+router.post('/login', function(req, res) {
+  if (!(req.body.email || req.body.password)) {
+    return res.render('login', {
+      title: 'Landline | Login',
+      error: 'All fields are required'
+    });
+  }
+
+  req.body.password = bcrypt.hashSync(req.body.password, SALT);
+
+  request.post({
+    url: LOGIN_URL,
+    json: true,
+    body: req.body
+  }, function(err, response) {
+    if (err) {
+      return res.render('signup', {
+        title: 'Landline | Login',
+        error: err.message
+      });
+    }
+
+    req.session.teamName = req.body.name;
+    req.session.jwt = response.body.token;
+
+    res.redirect('/');
+  });
 });
 
 router.get('/signup', function(req, res) {
@@ -67,10 +102,7 @@ router.post('/signup', function(req, res) {
     req.session.teamName = req.body.name;
     req.session.jwt = response.body.token;
 
-    res.render('index', {
-      title: 'Landline',
-      token: req.session.jwt
-    });
+    res.redirect('/');
   });
 });
 
@@ -104,7 +136,7 @@ function sign(payload) {
 
 function allowCors(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET');
+  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
 
   next();

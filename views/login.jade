@@ -6,13 +6,9 @@ block content
       if error
         div.bold.center.p2.mb2.white.bg-red.rounded
           span=error
-      form(action='/signup', method='POST')
+      form(action='/login', method='POST')
         label.left Email
         input.block.field-light.full-width(type='email', placeholder="Email address", name='email')
         label.left Password
         input.block.field-light.full-width(type='password', placeholder='Password', name='password')
-        label.left URL
-        input.block.field-light.full-width(type='text', placeholder='Single sign-on URL', name='url')
-        label.left Team name
-        input.block.field-light.full-width(type='text', placeholder='Team name', name='name')
         button.button.button-blue.left(type='submit') Submit
