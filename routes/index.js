@@ -84,6 +84,7 @@ router.post('/signup', function(req, res) {
     });
   }
 
+  req.body.name = req.body.name.toLowerCase();
   req.body.password = bcrypt.hashSync(req.body.password, SALT);
   req.body.secret = SECRET;
 
