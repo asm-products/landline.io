@@ -1,5 +1,6 @@
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var cors = require('cors');
 var dotenv = require('dotenv').load();
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -11,6 +12,17 @@ var session = require('express-session');
 
 var app = express();
 
+var WHITELIST = [
+  'http://localhost:4000'
+];
+
+var corsOptions = {
+  methods: ['GET'],
+  origin: function(origin, callback) {
+    callback(null, WHITELIST.indexOf(origin) > -1);
+  }
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -21,6 +33,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors(corsOptions));
 app.use(
   sassMiddleware({
     src: path.join(__dirname, 'public', 'scss'),

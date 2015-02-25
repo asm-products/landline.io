@@ -57,14 +57,14 @@ p {
   text-transform: uppercase; }
 
 .live-chat {
-  margin: -120px 0 10px;
+  margin: -150px 0 10px;
   z-index: 100;
   border: none;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
 
-.screenshot-chat {
-  margin: -120px 0 10px;
+.static-chat {
+  margin: -150px 0 10px;
   z-index: 100;
   border: none; }
 

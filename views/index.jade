@@ -4,15 +4,16 @@ block content
   header.site-header.center
     div.clearfix
       h1.site-title Embeddable Chat
-      h3 Connect your users &mdash; with you and with each other &dash; with a simple &lt;script&gt; tag
-      a.button Try it right away!
+      h3 Connect your users &mdash; with you and with each other &mdash; with a simple &lt;script&gt; tag
+      a.button Enter your email to give it a spin
+      div.center
+        form#email-signup(role='form', data-url='https://assembly.com/api/products/landline/potential_users')
+          input.field-light.mt2.mb0(type='email', placeholder='Email address', name='email')
+          button.button-blue.mt2.white.bold.py0(type='submit') Submit
 
   div.container.center
-    div.clearfix
-      if token
-        iframe.live-chat(src='/chat', width=800, height=400)
-      else
-        img.static-chat(src='/images/screenshot.png', width=800)
+    div#chat.clearfix
+      img.static-chat(src='/images/screenshot.png', width=800)
 
       div.feature.sm-col.sm-col-4
         h2.center Single dashboard
