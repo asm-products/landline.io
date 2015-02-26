@@ -13,7 +13,10 @@ var session = require('express-session');
 var app = express();
 
 var WHITELIST = [
-  'http://localhost:4000'
+  'http://localhost:4000',
+  'http://landline.io',
+  'https://landline.io',
+  'https://landline.herokuapp.com'
 ];
 
 var corsOptions = {

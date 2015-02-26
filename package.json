@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "repository": "git@github.com:asm-products/landline.io.git",
   "dependencies": {
     "basscss": "^4.2.4",
     "bcrypt": "^0.8.1",
