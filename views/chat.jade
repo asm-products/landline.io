@@ -1,4 +1,4 @@
 div#app.center
 script(src='landline.js')
 script
-  | Landline(window.location.toString(), document.getElementById('app'));
+  | Landline(window.location.toString(), '#{apiUrl}', document.getElementById('app'));

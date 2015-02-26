@@ -108,7 +108,10 @@ router.post('/signup', function(req, res) {
 });
 
 router.get('/chat', function(req, res) {
-  res.render('chat', { title: 'Landline' });
+  res.render('chat', {
+    apiUrl: process.env.LANDLINE_API,
+    title: 'Landline'
+  });
 });
 
 module.exports = router;
