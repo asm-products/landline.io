@@ -6,9 +6,9 @@ block content
       if error
         div.bold.center.p2.mb2.white.bg-red.rounded
           span=error
-      form(action='/login', method='POST')
+      form.clearfix(action='/login', method='POST')
         label.left Team name
         input.block.field-light.full-width(type='text', placeholder="Team name", name='name')
         label.left Password
         input.block.field-light.full-width(type='password', placeholder='Password', name='password')
-        button.button.button-blue.left(type='submit') Submit
+        button.button.primary.left(type='submit') Submit

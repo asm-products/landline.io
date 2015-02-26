@@ -1,16 +1,18 @@
 extends layout
 
 block content
-  header.site-header.center
+  header.bg-light.white.center
     div.clearfix
-      h1.site-title Embeddable Chat
+      h1.caps Embeddable Chat
       h3 Connect your users &mdash; with you and with each other &mdash; with a simple &lt;script&gt; tag
-      a.button Enter your email to give it a spin
+    div.clearfix
+      a.button.pill Enter your email to give it a spin
       p.mt2.mb0.h5 (Don't worry, we won't share it with anyone.)
       div.center
         form#email-signup(role='form', data-url='https://assembly.com/api/products/landline/potential_users')
           input.field-light.mt2.mb0(type='email', placeholder='Email address', name='email')
-          button.button-blue.mt2.white.bold.py0(type='submit') Submit
+          button.primary.mt2.white.bold.py0(type='submit') Submit
+    div.py4
 
   div.container.center
     div#chat.clearfix
@@ -25,6 +27,8 @@ block content
       div.feature.sm-col.sm-col-4
         h2.center Embed anywhere
         p.center Use Landline's highly flexible embeddable chat that puts you in control. Customize, collaborate, and have fun.
-    div.call-to-action.center
+    
+    hr.mb4
+    div.container.center
       h2 Get started with Landline &mdash; plans start at $5 month for 100 users.
       a.button(href='/signup') Sign up now &mdash; your first month is free

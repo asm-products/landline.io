@@ -2,44 +2,55 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/basscss.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    div#site-wrapper
-
-      nav.site-nav.clearfix
-        div.container
-          div.sm-col
-            a(href="/") Landline
-          div.sm-col-right
-            if token
-              a.p2.white(href="/logout") Log out
-            if !token
-              a.p2.white(href="/login") Log in
-              a.p2.white(href="/signup") Sign up
+    link(rel="stylesheet", href="/basscss.min.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body.bg-dark
+    nav.clearfix.bg-light.white.sm-show
+      div.container
+        div.sm-col
+          a(href="/")
+            img.p2(src="/images/icon.png", style="max-height: 40px;")
+        div.sm-col
+          a.block.mt2.bold(href="/") Landline
+          small.block Chat. Embedded.
+        div.sm-col-right
+          if currentUser
+            a.px2.mt2.button(href="/lougt") Log out
+          else
+            a.px2.mt2.button(href="/login") Log in
+            a.px2.mt2.button(href="/signup") Sign up
+    nav.clearfix.bg-light.white.sm-hide
+      div.container.mt1
+          a(href="/")
+            img.ml2.mr1.inline-block(src="/images/icon.png", style="max-height: 40px;")
+            span Landline
+        div.mb2
+          if currentUser
+            a.px2.mt2.button(href="/lougt") Log out
+          else
+            a.px2.mt2.button(href="/login") Log in
+            a.px2.mt2.button(href="/signup") Sign up
+    
+    .bg-white
       block content
 
-      footer.site-footer
-        div.clearfix
-          div.container
-            div.social-nav.sm-col
-              h3.footer-title Follow Landline
-              ul.list-reset.clearfix
-                li
-                  a(href="https://twitter.com/landlineio") Twitter
-                li
-                  a(href="https://facebook.com/landline.io") Facebook
-            div.help-nav.sm-col-right
-              ul.list-reset.clearfix
-                li
-                  a(href="/") Need help?
-                li
-                  a(href="/") Privacy
-                li
-                  a(href="/") Terms
-      div.copyrights.clearfix
-        div.px4
-          a Shipped in 7 days on Assembly
-          span.right &copy; 2015 Landline
-    script(src='/zepto.min.js')
-    script(src='/javascripts/app.js')
+    footer.bg-light.white
+      div.clearfix.px2
+        div.container
+          div.sm-col.mb2
+            h3.mt2.footer-title Follow Landline
+            a.mr2(href="https://twitter.com/landlineio") Twitter
+            a(href="https://facebook.com/landline.io") Facebook
+          div.sm-col-right
+            div.mt2
+              a.mr2(href="/") Need help?
+              a.mr2(href="/") Privacy
+              a(href="/") Terms
+      div.clearfix.bg-dark.px2
+        div.container.py1.clearfix
+          span Built in 7 days on 
+            a(href="https://assembly.com") Assembly
+          span.right.sm-show &copy; 2015 Landline
+          div.sm-hide &copy; 2015 Landline
+  script(src="/zepto.min.js")
+  script(src="/javascripts/app.js")
