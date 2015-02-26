@@ -2,6 +2,7 @@
   "name": "landline.io",
   "version": "0.0.1",
   "scripts": {
+    "dev": "nodemon ./bin/www",
     "start": "node ./bin/www"
   },
   "repository": "git@github.com:asm-products/landline.io.git",
