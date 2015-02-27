@@ -7,7 +7,7 @@ block content
       h3 Connect your users &mdash; with you and with each other &mdash; with a simple &lt;script&gt; tag
     div.clearfix
       a.button.pill Enter your email to give it a spin
-      p.mt2.mb0.h5 (Don't worry, we won't share it with anyone.)
+      p.mt2.mb0.h5 (Entering your email adds you to our mailing list. Don't worry, we won't share your email with anyone.)
       div.center
         form#email-signup(role='form')
           input#mce-EMAIL.field-light.mt2.mb0(type='email', placeholder='Email address', name='EMAIL')
@@ -30,5 +30,7 @@ block content
     
     hr.mb4
     div.container.center
-      h2 Get started with Landline &mdash; plans start at $5 per month for 100 users.
+      h2 
+        a(href="/signup", style="color: black;") Get started 
+        | with Landline &mdash; plans are free while we're in alpha.
       a.button(href='/signup') Sign up now &mdash; your first month is free
