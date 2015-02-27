@@ -16,7 +16,8 @@ var WHITELIST = [
   'http://localhost:4000',
   'http://landline.io',
   'https://landline.io',
-  'https://landline.herokuapp.com'
+  'https://landline.herokuapp.com',
+  'https://landline-api.herokuapp.com'
 ];
 
 var corsOptions = {
