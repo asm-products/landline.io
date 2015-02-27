@@ -22,8 +22,7 @@
     "node-sass-middleware": "^0.5.0",
     "node-uuid": "^1.4.2",
     "request": "^2.53.0",
-    "serve-favicon": "~2.2.0",
-    "zepto": "0.0.4"
+    "serve-favicon": "~2.2.0"
   },
   "engines": {
     "node": "0.10.x",

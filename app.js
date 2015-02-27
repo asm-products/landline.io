@@ -51,7 +51,6 @@ app.use(session({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/landline/dist')));
-app.use(express.static(path.join(__dirname, 'node_modules/zepto')));
 app.use(express.static(path.join(__dirname, 'node_modules/basscss/css')));
 
 app.use('/', routes);
