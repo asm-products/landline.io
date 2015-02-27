@@ -8,12 +8,13 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', {
     title: 'Landline',
-    token: req.session && req.session.token
+    team: req.user
   });
 });
 
 require('./chat')(router);
 require('./login')(router);
+require('./logout')(router);
 require('./signup')(router);
 require('./sso')(router);
 require('./teams')(router);

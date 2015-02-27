@@ -5,6 +5,7 @@ var dotenv = require('dotenv').load();
 var express = require('express');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var passport = require('passport');
 var path = require('path');
 var routes = require('./routes/index');
 var sassMiddleware = require('node-sass-middleware');
@@ -49,6 +50,8 @@ app.use(session({
   saveUninitialized: false,
   secret: process.env.SESSION_SECRET
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/landline/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/basscss/css')));

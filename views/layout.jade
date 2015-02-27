@@ -15,9 +15,10 @@ html
         div.sm-col
           a.block.mt2.bold(href="/") Landline
           small.block Chat. Embedded.
-        div.sm-col-right.hide
-          if currentUser
-            a.px2.mt2.button(href="/lougt") Log out
+        div.sm-col-right
+          if team
+            a.px2.mt2.button(href="/settings") Settings
+            a.px2.mt2.button(href="/logout") Log out
           else
             a.px2.mt2.button(href="/login") Log in
             a.px2.mt2.button(href="/signup") Sign up

@@ -1,43 +1,68 @@
 var bcrypt = require('bcrypt');
+var LocalStrategy = require('passport-local').Strategy;
+var passport = require('passport');
 var request = require('request');
 
 var LOGIN_URL = process.env.LANDLINE_API + '/teams';
 var SALT = process.env.SALT;
+
+passport.use(new LocalStrategy({
+    usernameField: 'name',
+    passwordField: 'password'
+  },
+  function(name, password, done) {
+    if (!(name || password)) {
+      return done(new Error('All fields are required'));
+    }
+
+    var _password = bcrypt.hashSync(password, SALT);
+    var _body = {
+      name: name,
+      password: _password
+    };
+
+    request.post({
+      url: LOGIN_URL + '/' + name,
+      json: true,
+      body: _body
+    }, function(err, response, body) {
+      if (err) {
+        return done(err);
+      }
+
+      done(null, response.body);
+    });
+  }
+));
+
+passport.serializeUser(function(team, done) {
+  done(null, team);
+});
+
+passport.deserializeUser(function(team, done) {
+  request.get({
+    url: LOGIN_URL + '/' + team.name,
+    json: true,
+    auth: {
+      bearer: team.token
+    }
+  }, function(err, response, body) {
+    if (err) {
+      return done(err);
+    }
+
+    done(null, response.body);
+  });
+});
 
 module.exports = function(router) {
   router.get('/login', function(req, res) {
     res.render('login', { title: 'Landline | Login' });
   });
 
-  router.post('/login', function(req, res) {
-    if (!(req.body.email || req.body.password)) {
-      return res.render('login', {
-        title: 'Landline | Login',
-        error: 'All fields are required'
-      });
-    }
-
-    var password = req.body.password;
-    req.body.password = bcrypt.hashSync(password, SALT);
-
-    request.post({
-      url: LOGIN_URL + '/' + req.body.name,
-      json: true,
-      body: req.body
-    }, function(err, response, body) {
-      if (err) {
-        return res.render('signup', {
-          title: 'Landline | Login',
-          error: err.message
-        });
-      }
-
-      var body = response.body;
-
-      req.session.teamName = body.name;
-      req.session.jwt = body.token;
-
-      res.redirect('/teams/' + req.session.teamName);
-    });
-  });
+  router.post('/login', passport.authenticate('local', {
+    successRedirect: '/settings',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
 };
