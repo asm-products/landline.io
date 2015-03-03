@@ -31,7 +31,7 @@ p {
   background-color: #477288; }
 
 .bg-red {
-  background-color: #ED1967; }
+  background-color: #f05648; }
 
 .button {
   border-radius: 4px; }
@@ -51,16 +51,16 @@ p {
   font-weight: 500;
   text-shadow: none;
   letter-spacing: .03em;
-  background-color: #ED1967;
+  background-color: #f05648;
   border-radius: 10em;
-  box-shadow: 0 1px 0 #9E1F60; }
+  box-shadow: 0 1px 0 #f05648; }
   .pill:hover {
     opacity: 1;
-    background-color: #d7115a;
+    background-color: #ee3c2c;
     box-shadow: none; }
 
 .primary {
-  background-color: #ED1967;
+  background-color: #f05648;
   color: white; }
 
 .static-chat {
