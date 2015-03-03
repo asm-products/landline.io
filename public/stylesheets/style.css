@@ -30,6 +30,9 @@ p {
 .bg-light {
   background-color: #477288; }
 
+.bg-red {
+  background-color: #ED1967; }
+
 .button {
   border-radius: 4px; }
 

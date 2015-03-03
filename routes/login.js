@@ -11,7 +11,7 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
   },
   function(name, password, done) {
-    if (!(name || password)) {
+    if (!name || !password) {
       return done(new Error('All fields are required'));
     }
 
