@@ -56,5 +56,8 @@ html
             a(href="https://assembly.com") Assembly
           span.right.sm-show &copy; 2015 Landline
           div.sm-hide &copy; 2015 Landline
-  script(src="https://code.jquery.com/jquery-2.1.3.min.js")
-  script(src="/javascripts/app.js")
+    script(src="https://code.jquery.com/jquery-2.1.3.min.js")
+    script(src="/javascripts/app.js")
+    script.
+      asml('create', '15b8327f61dc7f484f2217264e27575a83b80122');
+      asml('track', '#{team && team.email}');
