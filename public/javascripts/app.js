@@ -4,8 +4,6 @@ p.__asml.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
 n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://d1uxm17u44dmmr.cloudfront.net/1.0.0/asml.js","asml"));
 
 ;(function($) {
-  enableChat();
-
   $('#email-signup').submit(function(e) {
     e.preventDefault();
 
