@@ -30,6 +30,25 @@ a {
   }
 }
 
+.container a {
+  color: #345262;
+}
+
+.button-transparent {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid transparent;
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+
 p {
   font-size: 14px;
 }

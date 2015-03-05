@@ -9,6 +9,15 @@ html
   body.bg-dark
     nav.clearfix.bg-light.white.sm-show
       div.container
+        //- if messages.error
+        //-   .alert.alert-danger
+        //-     div= messages.error
+        //- if messages.info
+        //-   .alert.alert-info
+        //-     div= messages.info
+        //- if messages.success
+        //-   .alert.alert-success
+        //-   div= messages.success
         div.sm-col
           a(href="/")
             img.p2(src="/images/icon.png", style="max-height: 40px;")

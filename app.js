@@ -10,6 +10,9 @@ var path = require('path');
 var routes = require('./routes/index');
 var sassMiddleware = require('node-sass-middleware');
 var session = require('express-session');
+// var flash = require('express-flash');
+// var mongoose = require('mongoose'); // forgot password feature is stubbed for mongodb
+var nodemailer = require('nodemailer');
 
 var app = express();
 
@@ -32,6 +35,7 @@ var corsOptions = {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// app.use(flash());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -48,7 +52,7 @@ app.use(
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: process.env.SESSION_SECRET
+  secret: "121332132"
 }));
 app.use(passport.initialize());
 app.use(passport.session());
