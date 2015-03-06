@@ -11,7 +11,6 @@ module.exports = function(router) {
   });
 
   router.post('/signup', function(req, res) {
-    console.log(req.body);
     if (!req.body.email || !req.body.password || !req.body.name || !req.body.url) {
       return res.render('signup', {
         title: 'Landline | Signup',
