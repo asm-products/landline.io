@@ -12,8 +12,8 @@ module.exports = function(router) {
       url: API + req.params.slug,
       json: true,
       body: req.body,
-      headers: {
-        Authorization: 'Bearer ' + req.user.token
+      auth: {
+        bearer: req.user.token
       }
     }, function(err, response) {
       if (err) {
