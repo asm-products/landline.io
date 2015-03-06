@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.container
+    div.center.p4
+      if error
+        div.bold.center.p2.mb2.white.bg-red.rounded
+          span=error
+      form.clearfix(action='/forgot', method='POST')
+        label.left Team name
+        input.block.field-light.full-width(type='text', placeholder="Team name", name='name')
+        label.left Email
+        input.block.field-light.full-width(type='text', placeholder='Email', name='email')
+        button.button.primary.left(type='submit') Reset Password
