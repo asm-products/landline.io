@@ -52,7 +52,7 @@ app.use(
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: "121332132"
+  secret: process.env.SESSION_SECRET
 }));
 app.use(passport.initialize());
 app.use(passport.session());
