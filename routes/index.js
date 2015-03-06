@@ -15,6 +15,8 @@ router.get('/', function(req, res) {
 require('./chat')(router);
 require('./login')(router);
 require('./logout')(router);
+require('./forgot')(router);
+require('./reset')(router);
 require('./signup')(router);
 require('./sso')(router);
 require('./teams')(router);
