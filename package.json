@@ -17,7 +17,7 @@
     "express": "~4.10.6",
     "express-session": "^1.10.3",
     "jade": "~1.8.2",
-    "landline": "~0.1.0",
+    "landline": "git://github.com/asm-products/landline-web.git",
     "morgan": "~1.5.1",
     "node-sass-middleware": "^0.5.0",
     "node-uuid": "^1.4.2",
