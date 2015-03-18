@@ -51,6 +51,9 @@ passport.deserializeUser(function(team, done) {
       return done(err);
     }
 
+    // attach the token to the deserialized user
+    response.body.token = team.token;
+
     done(null, response.body);
   });
 });

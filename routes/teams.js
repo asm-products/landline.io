@@ -9,7 +9,9 @@ module.exports = function(router) {
     }
 
     request.put({
-      url: API + req.params.slug,
+      // That trailing slash is important; without it, the API will
+      // redirect the request and you won't get the response you expect
+      url: API + req.params.slug + '/',
       json: true,
       body: req.body,
       auth: {
@@ -20,7 +22,7 @@ module.exports = function(router) {
         return res.render('error');
       }
 
-      res.redirect('/teams/' + req.params.slug);
+      res.redirect('/settings');
     });
   });
 };

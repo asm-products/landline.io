@@ -1,4 +1,4 @@
 div#app
-script(src='landline.js')
+script(src='landline.dev.js')
 script
-  | Landline(window.location.toString(), '#{apiUrl}', document.getElementById('app'));
+  | Landline(window.location.search, document.getElementById('app'));
