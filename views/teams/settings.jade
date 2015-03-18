@@ -9,10 +9,12 @@ block content
       form(action='/teams/#{team.name}', method='POST')
         label.left Email
         input.block.field-light.full-width(type='email', placeholder="Email address", name='email', value=team.email)
-        label.left URL
+        label.left URL &mdash; Landline uses this endpoint to authenticate your users
         input.block.field-light.full-width(type='text', placeholder='Single sign-on URL', name='url', value=team.url)
         label.left Team name
         input.block.field-light.full-width(type='text', placeholder='Team name', name='name', value=team.name)
-        label.left Shared secret (be careful if you change this, and be sure to update the secret on your server)
+        label.left Shared secret &mdash; be careful if you change this, and be sure to update the secret on your server
         input.block.field-light.full-width(type='text', placeholder='Shared secret', name='secret', value=team.secret)
+        label.left Webhook URL &mdash; Landline will send incoming messages to this endpoint (optional)
+        input.block.field-light.full-width(type='text', placeholder='Webhook URL', name='webhook_url', value=team.webhook_url)
         button.button.button-blue.left(type='submit') Save

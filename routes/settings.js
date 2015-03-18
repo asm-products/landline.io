@@ -4,7 +4,7 @@ module.exports = function(router) {
       return res.redirect('/login');
     }
 
-    res.render('teams/team', {
+    res.render('teams/settings', {
       title: 'Landline | ' + req.user.name,
       team: req.user
     });
