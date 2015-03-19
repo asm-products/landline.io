@@ -1,5 +1,6 @@
 var bcrypt = require('bcrypt');
 var crypto = require('crypto');
+var passport = require('passport');
 var request = require('request');
 
 var SALT = process.env.SALT;
@@ -39,7 +40,9 @@ module.exports = function(router) {
       req.session.teamName = req.body.name;
       req.session.jwt = response.body.token;
 
-      res.redirect('/');
+      passport.authenticate('local')(req, res, function () {
+        res.redirect('/settings');
+      });
     });
   });
 };

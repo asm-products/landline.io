@@ -40,6 +40,10 @@ passport.serializeUser(function(team, done) {
 });
 
 passport.deserializeUser(function(team, done) {
+  if (!team.token) {
+    return done(null, false);
+  }
+
   request.get({
     url: LOGIN_URL + '/' + team.name,
     json: true,
