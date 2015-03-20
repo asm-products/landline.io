@@ -11,6 +11,7 @@ This is a product being built by the Assembly community. You can help push this 
 ```
 git clone git@github.com:asm-products/landline.io.git
 cd landline.io
+cp .env.sample .env
 npm install
 npm start
 ```
