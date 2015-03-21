@@ -1,5 +1,9 @@
 body.overflow-hidden
   div#app
-  script(src='landline.js')
+  if process.env.NODE_ENV == 'development'
+    script(src='http://localhost:8080/webpack-dev-server.js')
+    script(src='http://localhost:8080/landline.dev.js')
+  else
+    script(src='landline.js')
   script
     | Landline(window.location.search, document.getElementById('app'));
