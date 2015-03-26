@@ -1,6 +1,6 @@
 {
   "name": "landline.io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www"
