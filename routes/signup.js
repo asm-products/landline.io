@@ -23,7 +23,7 @@ module.exports = function(router) {
 
     req.body.name = req.body.name.toLowerCase();
     req.body.password = bcrypt.hashSync(password, SALT);
-    req.body.secret = crypto.randomBytes(48).toString('hex');
+    req.body.secret = crypto.randomBytes(24).toString('hex');
 
     request.post({
       url: SIGNUP_URL,
