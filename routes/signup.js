@@ -37,10 +37,19 @@ module.exports = function(router) {
         });
       }
 
-      req.session.teamName = req.body.name;
-      req.session.jwt = response.body.token;
+      var team = {
+        name: req.body.name,
+        token: response.body.token
+      };
 
-      passport.authenticate('local')(req, res, function () {
+      req.login(team, function(err) {
+        if (err) {
+          return res.render('signup', {
+            title: 'Landline | Signup',
+            error: err.message
+          });
+        }
+
         res.redirect('/settings');
       });
     });
