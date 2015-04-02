@@ -23,8 +23,10 @@ html
             img.p2(src="/images/icon.png", style="max-height: 40px;")
         div.sm-col
           a.block.mt2.bold(href="/") Landline
-          small.block Chat. Embedded.
+          small.block Chat freely.
+          
         div.sm-col-right
+          a.px2.mt2.button(href="https://asm-products.github.io/landline-docs") Documentation
           if team
             a.px2.mt2.button(href="/settings") Settings
             a.px2.mt2.button(href="/logout") Log out
@@ -37,8 +39,9 @@ html
             img.ml2.mr1.inline-block(src="/images/icon.png", style="max-height: 40px;")
             span Landline
         div.mb2
-          if currentUser
-            a.px2.mt2.button(href="/lougt") Log out
+          a.px2.mt2.button(href="http://docs.landline.io") Documentation
+          if team
+            a.px2.mt2.button(href="/logout") Log out
           else
             a.px2.mt2.button(href="/login") Log in
             a.px2.mt2.button(href="/signup") Sign up
